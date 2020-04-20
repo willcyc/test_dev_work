@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>login page</title>
+        <!-- 引用静态文件，方式一： -->
+        {% load static %}
+        <link href='{% static "css/theme.css" %}' rel='stylesheet' type="text/css" />
+        <link rel="shortcut icon" href='{% static "css/favicon.ico" %}'/>
+        <link href='{% static "css/classic.css" %}' rel='stylesheet' type="text/css" />
+        <link rel="shortcut icon" href='{% static "css/favicon.ico" %}'/>
+       
+        <!-- 引用静态文件，方式二：
+        <link href='/static/css/theme.css' rel='stylesheet' type="text/css" />
+        <link rel="shortcut icon" href='/static/css/favicon.ico'/> -->
+        
+        <!-- 引用css，方式三： -->
+        <!-- <link href="https://htmlstream.com/preview/space-v1.6.1/assets/css/theme.css" rel='stylesheet' type="text/css" /> -->
+    </head>
+
+    <body>
+    {% block base %}
+        <!-- 所有的html页面都继承这个页面 -->
+    {% endblock %}
+    </body>
+</html>

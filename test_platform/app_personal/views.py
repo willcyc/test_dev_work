@@ -38,14 +38,11 @@ def login(request):
             return render(request, "login.html", {"error": "用户名或密码不能为空"})
         if user is not None:
             auth.login(request, user)  # 记录用户的登录状态
-            return HttpResponseRedirect("manage")
+            response = HttpResponseRedirect("/app_manage/project")
+            response.set_cookie("user", username, 3600)  # 以cookie的方式显示登录后的用户名
+            return response
         else:
             return render(request, "login.html", {"error": "用户名或密码错误！"})
-
-
-@login_required
-def manage(request):
-    return render(request, "manage.html")
 
 
 @login_required

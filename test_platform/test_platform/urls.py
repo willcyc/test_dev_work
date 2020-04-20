@@ -19,6 +19,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app_personal/', include('app_personal.urls')),
+    path('app_personal/', include('app_personal.urls')),  # 账户管理
+    path('app_manage/', include('app_manage.urls')),  # 项目管理
+    path('app_module/', include('app_manage.urls')),  # 模块管理
 
 ]
